@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { IFood } from "src/@types/types";
+import { BaseFood, IFood } from "src/@types/types";
 import { Food } from "../../components/Food";
 import { Header } from "../../components/Header";
 import { ModalAddFood } from "../../components/ModalAddFood";
@@ -34,14 +34,14 @@ export default function Dashboard() {
 	}
 
 	function toggleEditModal() {
-		if (modalOpen) {
+		if (editModalOpen) {
 			setEditModalOpen(false);
 		} else {
 			setEditModalOpen(true);
 		}
 	}
 
-	async function handleAddFood(food: IFood) {
+	async function handleAddFood(food: BaseFood) {
 		try {
 			const response = await api.post("/foods", {
 				...food,

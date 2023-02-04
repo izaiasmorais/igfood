@@ -6,3 +6,10 @@ export interface IFood {
 	available: boolean;
 	image: string;
 }
+
+export interface BaseFood {
+	image: string;
+	name: string;
+	price: string;
+	description: string;
+}
